@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Resume Builder</title>
+  </head>
+  <body>
+    <h1 align="center" style="border-bottom: solid black 4px">
+      Resume Builder
+    </h1>
+    <center id="center1">
+      <form id="form1">
+        <table id="table1">
+          <tr>
+            <td>Upload your image</td>
+            <!-- <td><input id="images" type="file" accept="image/*" /></td> -->
+            <td>
+              <input
+                id="images"
+                type="file"
+                accept="image/*"
+                onchange="handleImageInput()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Full Name</td>
+            <td>
+              <input
+                type="text"
+                id="fullname"
+                placeholder="ALL CAPITAL WORD"
+                autofocus
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Phone No.</td>
+            <td>
+              <input
+                type="number"
+                id="phone"
+                placeholder="01234..."
+                autofocus
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Email.</td>
+            <td>
+              <input
+                type="email"
+                id="email"
+                placeholder="example@mail.com"
+                autofocus
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Career Objective</td>
+            <td><input id="cgoal" type="text" /></td>
+          </tr>
+          <tr>
+            <th>Graduation Details</th>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td>
+              <input type="text" id="q1" placeholder="Btech/BCA/BCOM" />
+            </td>
+            <td>Year of Passing</td>
+            <td><input type="text" id="b1" placeholder="year" /></td>
+          </tr>
+          <tr>
+            <td>College/University Name</td>
+            <td><input type="text" id="s1" /></td>
+            <td>Percentage/cgpa</td>
+            <td><input type="text" id="p1" /></td>
+          </tr>
+          <tr>
+            <th>High School Details</th>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td>
+              <input type="text" id="q2" placeholder="12th/Diploma" />
+            </td>
+            <td>Year of Passing</td>
+            <td><input type="text" id="b2" placeholder="year" /></td>
+          </tr>
+          <tr>
+            <td>College/University Name</td>
+            <td><input type="text" id="s2" /></td>
+            <td>Percentage/cgpa</td>
+            <td><input type="text" id="p2" /></td>
+          </tr>
+          <tr>
+            <th>!0th details</th>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td>
+              <input type="text" id="q3" placeholder="10th" />
+            </td>
+            <td>Year of Passing</td>
+            <td><input type="text" id="b3" placeholder="year" /></td>
+          </tr>
+          <tr>
+            <td>School/Board Name</td>
+            <td><input type="text" id="s3" /></td>
+            <td>Percentage/cgpa</td>
+            <td><input type="text" id="p3" /></td>
+          </tr>
+          <tr>
+            <td><b>Academic Project details</b></td>
+            <td>
+              <input type="text" id="exp1" placeholder="if any otherwise NIL" />
+            </td>
+            <td>
+              <input type="text" id="exp2" placeholder="if any otherwise NIL" />
+            </td>
+          </tr>
+          <tr>
+            <th>Skills</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="skil1" placeholder="one" /></td>
+            <td><input type="text" id="skil2" placeholder="two" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="skil3" placeholder="three" /></td>
+            <td><input type="text" id="skil4" placeholder="four" /></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="skil5" placeholder="five" /></td>
+          </tr>
+          <tr>
+            <th>Personal Details</th>
+          </tr>
+          <tr>
+            <td>Hobbies</td>
+            <td>
+              <input type="text" id="nat" placeholder="seperate by comma" />
+            </td>
+          </tr>
+          <tr>
+            <td>linkedin</td>
+            <td>
+              <input
+                type="url"
+                id="dob"
+                placeholder="https://www.linkedin.com/in/hrutikbhalerao/"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td><input type="text" id="add" /></td>
+          </tr>
+          <tr>
+            <td>Submit</td>
+            <td>
+              <button type="button" id="btn" onclick="resume();">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </center>
+
+    <h2 style="text-align: center; border: solid black 4px">
+      Your resume will be generated after clicking on submit
+    </h2>
+    <center style="margin: 10px 10px 10px 10px" id="center2">
+      <div class="resume-container">
+        <div class="resume-image" id="div1"></div>
+        <div class="resume-section1" id="div2"></div>
+        <div class="resume-section2" id="div3"></div>
+        <div class="resume-section3" id="div4"></div>
+        <div class="resume-section4" id="div5"></div>
+        <div class="resume-section5" id="div6"></div>
+        <div class="resume-section6" id="div7"></div>
+        <div class="resume-section7" id="div8"></div>
+        <div class="resume-section8" id="div9"></div>
+      </div>
+    </center>
+    <center id="center3">
+      <button type="button" onclick="printcontent();">Print Your Resume</button>
+    </center>
+    <footer
+      style="text-align: center; background-color: #f2f2f2; padding: 20px"
+    >
+      Developed by
+      <a target="_blank" href="https://www.linkedin.com/in/hrutikbhalerao/"
+        >hrutik</a
+      >
+    </footer>
+  </body>
+</html>
